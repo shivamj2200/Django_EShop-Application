@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="p-4 m-4">
+<div class ="col-lg-5 mx-auto border rounded pt-4">
+    <h3 class = "alert alert-right border rounded"> Create An Account</h3>
+    {% comment %} <from action="/" method ="POST"> {% endcomment %}
+        <form action="/signup" method="POST">
+             {% csrf_token %}
+             {% if error %}
+             <div class="alert alert-danger" role="alert">
+               {{error}}
+             </div>
+             {% endif  %}
+        <!--first Name-->
+        <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" name="firstname" id="" class="form-control form-control-sm" >
+          </div>
+          <!--Last Name-->
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" name="lastname" id="" class="form-control form-control-sm">
+          </div>
+           <!--phone-->
+        <div class="form-group">
+            <label for="">Phone</label>
+            <input type="text" name="phone" id="" class="form-control form-control-sm" placeholder="7897982200">
+        </div>
+        <!--email-->
+        <div class="form-group">
+          <label for="">Email</label>
+          <input required type="email" name="email" id="" class="form-control form-control-sm" placeholder="example@gmail.com">
+        </div>
+        <!--Password-->
+        <div class="form-group">
+            <label for="">Password</label>
+            <input type="Password" name="password" id="" class="form-control form-control-sm" placeholder="**********">
+          </div>
+
+    <div class="form-group pt-2">
+        <input class="btn btn-sm btn-info" type = "Submit" value = "Crearte An Account ">
+    </div>
+    </form>
+</div>
+
+    </div>
+</div>
+
+{% endblock %}

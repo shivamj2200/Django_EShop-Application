@@ -1,0 +1,3 @@
+virtual envirment = myenv
+admin = User 
+password = 1234
